@@ -1,9 +1,7 @@
 package org.fasttrackit;
 
-public class App
-{
-    public static void main( String[] args )
-    {
+public class App {
+    public static void main(String[] args) {
         System.out.println("Hello World!");
 
         Car carReference = new Car();
@@ -23,11 +21,11 @@ public class App
         carReference.engine = engine1;
 
         System.out.println("Engine1 capacity: " + engine1.capacity);
-        System.out.println("Car engine capacity: "+ carReference.engine.capacity);
+        System.out.println("Car engine capacity: " + carReference.engine.capacity);
 
         engine1.capacity = 4000;
 
-        System.out.println("Car engine capacity after update: "+ carReference.engine.capacity);
+        System.out.println("Car engine capacity after update: " + carReference.engine.capacity);
 
         // concatenation
         System.out.println("Properties of car " + carReference.name);
@@ -60,6 +58,11 @@ public class App
         double distanceForCar1 = carReference.accelerate(60, 1);
 
         double distanceForCar2 = car2.accelerate(100, 1);
+
+        System.out.println("Engine manufacturer before repair: " + carReference.engine.manufacturer);
+        Mechanic mechanic = new Mechanic();
+        mechanic.repair(carReference);
+        System.out.println("Engine manufacturer after repair: " + carReference.engine.manufacturer);
 
 
 //        System.out.println("Initial name for car1: " + carReference.name);
