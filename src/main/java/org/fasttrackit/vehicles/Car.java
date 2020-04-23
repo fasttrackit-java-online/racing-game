@@ -7,6 +7,9 @@ public class Car extends AutoVehicle {
 
     private int doorCount;
 
+    public Car() {
+    }
+
     public Car(Engine engine) {
         super(engine);
     }
