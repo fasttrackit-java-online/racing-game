@@ -1,4 +1,4 @@
-package org.fasttrackit;
+package org.fasttrackit.vehicles;
 
 import java.time.LocalDate;
 
@@ -11,7 +11,7 @@ public class Vehicle {
     private String name;
     private double fuelLevel;
     private double mileage;
-    private double totalTraveledDistance;
+    protected double totalTraveledDistance;
     private double maxSpeed;
 
     private boolean damaged;
