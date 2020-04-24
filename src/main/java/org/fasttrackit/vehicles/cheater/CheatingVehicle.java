@@ -30,5 +30,6 @@ public class CheatingVehicle extends Vehicle {
 
     public void cheat() {
         totalTraveledDistance *= 2;
+        System.out.println("Updated total distance: " + totalTraveledDistance);
     }
 }

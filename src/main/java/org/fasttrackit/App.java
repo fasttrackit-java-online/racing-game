@@ -2,6 +2,7 @@ package org.fasttrackit;
 
 import org.fasttrackit.vehicles.AutoVehicle;
 import org.fasttrackit.vehicles.Car;
+import org.fasttrackit.vehicles.Vehicle;
 import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
 public class App {
@@ -9,13 +10,19 @@ public class App {
 //        Game game = new Game();
 //        game.start();
 
-        CheatingVehicle cheatingVehicle = new CheatingVehicle();
+        Vehicle cheatingVehicle = new CheatingVehicle();
         cheatingVehicle.setName("Cheater");
 
 //        cheatingVehicle.accelerate(60, 1);
-        cheatingVehicle.accelerate(60);
 
+        // object type determines method implementation
+        cheatingVehicle.accelerate(60, 1);
 
+        // variable type determines what methods can be invoked directly
+        // type casting
+        if (cheatingVehicle instanceof CheatingVehicle) {
+            ((CheatingVehicle) cheatingVehicle).cheat();
+        }
 //        // example of invoking overloaded methods and constructors
 //        Engine engine = new Engine();
 //        engine.setManufacturer("Renault");
