@@ -7,22 +7,22 @@ import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
 public class App {
     public static void main(String[] args) {
-//        Game game = new Game();
-//        game.start();
+        Game game = new Game();
+        game.start();
 
-        Vehicle cheatingVehicle = new CheatingVehicle();
-        cheatingVehicle.setName("Cheater");
-
+//        Vehicle cheatingVehicle = new CheatingVehicle();
+//        cheatingVehicle.setName("Cheater");
+//
+////        cheatingVehicle.accelerate(60, 1);
+//
+//        // object type determines method implementation
 //        cheatingVehicle.accelerate(60, 1);
-
-        // object type determines method implementation
-        cheatingVehicle.accelerate(60, 1);
-
-        // variable type determines what methods can be invoked directly
-        // type casting
-        if (cheatingVehicle instanceof CheatingVehicle) {
-            ((CheatingVehicle) cheatingVehicle).cheat();
-        }
+//
+//        // variable type determines what methods can be invoked directly
+//        // type casting
+//        if (cheatingVehicle instanceof CheatingVehicle) {
+//            ((CheatingVehicle) cheatingVehicle).cheat();
+//        }
 //        // example of invoking overloaded methods and constructors
 //        Engine engine = new Engine();
 //        engine.setManufacturer("Renault");
