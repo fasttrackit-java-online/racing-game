@@ -5,15 +5,31 @@ import org.fasttrackit.vehicles.Car;
 import org.fasttrackit.vehicles.Vehicle;
 import org.fasttrackit.vehicles.cheater.CheatingVehicle;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 
 public class App {
     public static void main(String[] args) {
         Game game = new Game();
         game.start();
+
+//        Set<String> cities = new HashSet<>();
+//        cities.add("Cluj-Napoca");
+//        cities.add("Bucuresti");
+//        System.out.println("Set size: " + cities.size());
+//        cities.add("Bucuresti");
+//        System.out.println("Set size 2: " + cities.size());
+//
+//        Iterator<String> citiesIterator = cities.iterator();
+//
+//        for (int i = 0; i < cities.size(); i++) {
+//            String nextCity = citiesIterator.next();
+//            System.out.println(nextCity);
+//        }
+
+//        while (citiesIterator.hasNext()) {
+//            System.out.println(citiesIterator.next());
+//        }
 
 //        List<String> favoriteAuthors = new ArrayList<>();
 //        favoriteAuthors.add("Tolkien");
