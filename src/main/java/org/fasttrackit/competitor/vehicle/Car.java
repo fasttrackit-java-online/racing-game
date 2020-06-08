@@ -1,6 +1,4 @@
-package org.fasttrackit.vehicles;
-
-import org.fasttrackit.Engine;
+package org.fasttrackit.competitor.vehicle;
 
 // "is-a" relationship (inheritance)
 public class Car extends AutoVehicle {

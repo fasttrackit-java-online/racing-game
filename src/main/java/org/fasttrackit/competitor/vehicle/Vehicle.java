@@ -1,4 +1,4 @@
-package org.fasttrackit.vehicles;
+package org.fasttrackit.competitor.vehicle;
 
 import java.time.LocalDate;
 

@@ -1,6 +1,4 @@
-package org.fasttrackit.vehicles;
-
-import org.fasttrackit.Engine;
+package org.fasttrackit.competitor.vehicle;
 
 public abstract class AutoVehicle extends Vehicle {
 
