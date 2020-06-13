@@ -1,10 +1,11 @@
 package org.fasttrackit.competitor.vehicle;
 
+import org.fasttrackit.competitor.AbstractMobile;
 import org.fasttrackit.competitor.Mobile;
 
 import java.time.LocalDate;
 
-public abstract class Vehicle implements Mobile {
+public abstract class Vehicle extends AbstractMobile implements Mobile {
 
     // class variable (static variable)
     private static int totalVehicleCount;

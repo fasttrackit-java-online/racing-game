@@ -1,6 +1,6 @@
 package org.fasttrackit.competitor;
 
-public interface Mobile {
+public interface Mobile extends Comparable<Mobile> {
 
     double accelerate(double speed, double durationInHours);
 

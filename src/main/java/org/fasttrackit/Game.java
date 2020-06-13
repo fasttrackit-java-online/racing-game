@@ -1,11 +1,12 @@
 package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
-import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
+import org.fasttrackit.utils.ScannerUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -26,6 +27,18 @@ public class Game {
         initializeCompetitors();
 
         playOneRound();
+
+        displayRankingTable();
+    }
+
+    private void displayRankingTable() {
+        System.out.println("Ranking Table:");
+        Collections.sort(competitors);
+
+        for (int i = 0; i < competitors.size(); i++) {
+            System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": "
+                    + competitors.get(i).getTotalTraveledDistance() + " km.");
+        }
     }
 
     private void playOneRound() {
@@ -104,7 +117,7 @@ public class Game {
     }
 
     private double getAccelerationSpeedFromUser() {
-        System.out.println("Please enter ace");
+        System.out.println("Please enter acceleration speed");
         return ScannerUtils.nextDoubleAndMoveToNextLine();
     }
 }
