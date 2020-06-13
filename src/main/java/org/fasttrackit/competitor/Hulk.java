@@ -2,7 +2,7 @@ package org.fasttrackit.competitor;
 
 import java.util.concurrent.ThreadLocalRandom;
 
-public class Hulk extends AbstractMobile implements Mobile {
+public class Hulk implements Mobile {
 
     private double totalTraveledDistance;
     private boolean cooperative;
