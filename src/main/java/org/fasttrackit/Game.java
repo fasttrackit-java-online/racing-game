@@ -4,6 +4,8 @@ import org.fasttrackit.competitor.Mobile;
 import org.fasttrackit.competitor.MobileComparator;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
+import org.fasttrackit.persistence.FileRankingRepository;
+import org.fasttrackit.persistence.RankingsRepository;
 import org.fasttrackit.utils.ScannerUtils;
 
 import java.util.*;
@@ -16,6 +18,8 @@ public class Game {
     private Set<Mobile> outOfRaceCompetitors = new HashSet<>();
     private boolean winnerNotKnown = true;
     private Track selectedTrack;
+
+    private RankingsRepository rankingsRepository = new FileRankingRepository();
 
     public void start() throws Exception {
         System.out.println("Welcome to the Racing Game!");
@@ -39,9 +43,14 @@ public class Game {
         System.out.println("Rankings:");
 
         for (int i = 0; i < competitors.size(); i++) {
-            System.out.println((i+1) + ". " + competitors.get(i).getName() + ": " +
+            System.out.println((i + 1) + ". " + competitors.get(i).getName() + ": " +
                     competitors.get(i).getTotalTraveledDistance() + " km");
+
+            rankingsRepository.addRankingItem(i + 1, competitors.get(i).getName(),
+                    competitors.get(i).getTotalTraveledDistance());
         }
+
+        rankingsRepository.close();
     }
 
     private void loopRounds() {
