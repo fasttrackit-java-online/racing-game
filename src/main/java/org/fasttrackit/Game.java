@@ -1,31 +1,42 @@
 package org.fasttrackit;
 
 import org.fasttrackit.competitor.Mobile;
-import org.fasttrackit.utils.ScannerUtils;
 import org.fasttrackit.competitor.vehicle.Car;
 import org.fasttrackit.competitor.vehicle.Vehicle;
+import org.fasttrackit.utils.ScannerUtils;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class Game {
 
     private Track[] tracks = new Track[3];
     private List<Mobile> competitors = new ArrayList<>();
+    private Set<Mobile> outOfRaceCompetitors = new HashSet<>();
+    private boolean winnerNotKnown = true;
+    private Track selectedTrack;
 
     public void start() {
         System.out.println("Welcome to the Racing Game!");
 
         initializeTracks();
 
-        Track selectedTrack = getSelectedTrackFromUser();
+        selectedTrack = getSelectedTrackFromUser();
 
         System.out.println("Selected track: " + selectedTrack.getName());
 
         initializeCompetitors();
 
-        playOneRound();
+        loopRounds();
+    }
+
+    private void loopRounds() {
+        while (winnerNotKnown && outOfRaceCompetitors.size() < competitors.size()) {
+            playOneRound();
+        }
     }
 
     private void playOneRound() {
@@ -35,8 +46,20 @@ public class Game {
         for (Mobile competitor : competitors) {
             System.out.println("It's " + competitor.getName() + "'s turn.");
 
+            if (!competitor.canMove()) {
+                System.out.println("Sorry, you cannot continue the race...");
+                outOfRaceCompetitors.add(competitor);
+                continue;
+            }
+
             double speed = getAccelerationSpeedFromUser();
             competitor.accelerate(speed, 1);
+
+            if (competitor.getTotalTraveledDistance() >= selectedTrack.getLength()) {
+                System.out.println("The winner is: " + competitor.getName());
+                winnerNotKnown = false;
+                break;
+            }
         }
     }
 
@@ -104,7 +127,7 @@ public class Game {
     }
 
     private double getAccelerationSpeedFromUser() {
-        System.out.println("Please enter ace");
+        System.out.println("Please enter acceleration speed");
         return ScannerUtils.nextDoubleAndMoveToNextLine();
     }
 }
