@@ -1,4 +1,4 @@
-package org.fasttrackit.competitor.vehicle;
+package org.fasttrackit.domain.competitor.vehicle;
 
 public class Engine {
 

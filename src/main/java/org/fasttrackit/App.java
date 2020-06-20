@@ -1,7 +1,6 @@
 package org.fasttrackit;
 
-import org.fasttrackit.competitor.vehicle.Car;
-import org.fasttrackit.competitor.vehicle.Engine;
+import org.fasttrackit.service.Game;
 
 public class App {
     public static void main(String[] args) throws Exception {

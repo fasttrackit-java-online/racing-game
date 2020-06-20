@@ -1,6 +1,6 @@
-package org.fasttrackit.competitor.vehicle.cheater;
+package org.fasttrackit.domain.competitor.vehicle.cheater;
 
-import org.fasttrackit.competitor.vehicle.Vehicle;
+import org.fasttrackit.domain.competitor.vehicle.Vehicle;
 
 public class CheatingVehicle extends Vehicle {
 
