@@ -27,13 +27,12 @@ public class Game {
     private RankingsRepository rankingsRepository = new FileRankingRepository();
 
     public void start() throws Exception {
-        System.out.println("Welcome to the Racing Game!");
+        System.out.println("Welcome to the \"Racing Game\"! \uD83D\uDE97");
+        System.out.println();
 
         initializeTracks();
 
         selectedTrack = getSelectedTrackFromUser();
-
-        System.out.println("Selected track: " + selectedTrack.getName());
 
         initializeCompetitors();
 
@@ -66,6 +65,7 @@ public class Game {
 
     private void playOneRound() {
         System.out.println("New round.");
+        System.out.println();
 
         // enhanced for (for-each)
         for (Mobile competitor : competitors) {
@@ -82,6 +82,7 @@ public class Game {
 
             if (competitor.getTotalTraveledDistance() >= selectedTrack.getLength()) {
                 System.out.println("The winner is: " + competitor.getName());
+                System.out.println();
                 winnerNotKnown = false;
                 break;
             }
@@ -112,6 +113,7 @@ public class Game {
                 System.out.println((i + 1) + ". " + tracks[i].getName() + ": " + tracks[i].getLength());
             }
         }
+        System.out.println();
     }
 
     private void initializeCompetitors() {
@@ -119,6 +121,8 @@ public class Game {
 
         for (int i = 1; i <= playerCount; i++) {
             System.out.println("Preparing player " + i + " for the race.");
+            System.out.println();
+
             Mobile mobile = createCompetitor();
 
             competitors.add(mobile);
@@ -149,6 +153,7 @@ public class Game {
 
             case 2:
                 System.out.println("Hulk is here!");
+                System.out.println();
                 return new Hulk();
 
             default:
@@ -174,12 +179,12 @@ public class Game {
             int trackNumber = userInputController.getSelectedTrack();
             return tracks[trackNumber - 1];
         } catch (InputMismatchException e) {
-            System.out.println("Please enter a valid number.");
+//            System.out.println("Please enter a valid number.");
             throw new Exception("You have entered an invalid value.");
         } catch (ArrayIndexOutOfBoundsException e) {
             throw new RuntimeException("You have entered an invalid number.");
         } finally {
-            System.out.println("Finally block is always executed.");
+//            System.out.println("Finally block is always executed.");
         }
     }
 

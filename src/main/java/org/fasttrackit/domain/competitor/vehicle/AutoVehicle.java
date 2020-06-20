@@ -12,7 +12,6 @@ public abstract class AutoVehicle extends Vehicle {
 
     public AutoVehicle(Engine engine) {
         this.engine = engine;
-        System.out.println("Custom constructor");
     }
 
     public Engine getEngine() {
