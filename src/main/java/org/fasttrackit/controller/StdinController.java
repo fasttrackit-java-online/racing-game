@@ -27,4 +27,9 @@ public class StdinController implements UserInputController {
         System.out.println("Please enter acceleration speed");
         return ScannerUtils.nextDoubleAndMoveToNextLine();
     }
+
+    @Override
+    public int getCompetitorType() {
+        return ScannerUtils.nextIntAndMoveToNextLine();
+    }
 }
